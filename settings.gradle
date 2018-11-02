@@ -1,0 +1,31 @@
+rootProject.name = 'jtm'
+//include 'jtm_core'
+//include 'jtm_sys'
+//include 'jtm_eureka'
+
+def dir = new File(settingsDir.toString())
+def projects = new HashSet()
+def projectSymbol = File.separator + 'src'
+
+dir.eachDirRecurse { subDir ->
+    def subDirName = subDir.canonicalPath
+    def isSubProject = true
+    if (subDirName.endsWith(projectSymbol)) {
+        for (String projectDir in projects) {
+            if (subDirName.startsWith(projectDir)) {
+                isSubProject = false
+                break
+            }
+        }
+        if (isSubProject) {
+            projects << subDirName
+            def lastIndex = subDirName.lastIndexOf(projectSymbol)
+            def gradleModulePath = subDirName.substring(dir.canonicalPath.length(), lastIndex).replace(File.separator, ':')
+            println "include " + gradleModulePath
+            include gradleModulePath
+        }
+    }
+}
+include 'jtm_gateway'
+include 'jtm_ribbon'
+

@@ -1,0 +1,8 @@
+dependencies {
+    compile project(":jtm_core")
+    compile(
+            [group:'org.projectlombok',name: 'lombok',version:'1.16.6'],
+            ['org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'],
+            ['org.springframework.boot:spring-boot-starter-web']
+    )
+}

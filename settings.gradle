@@ -28,4 +28,5 @@ dir.eachDirRecurse { subDir ->
 }
 include 'jtm_gateway'
 include 'jtm_ribbon'
+include 'jtm_sso'
 

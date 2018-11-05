@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: jtm_sso
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/jtm
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+# Mybatis 配置
+mybatis:
+  type-aliases-package: com.dqcer.jtm.sso.dao
+  mapper-locations: classpath:mapper/*.xml
+
+

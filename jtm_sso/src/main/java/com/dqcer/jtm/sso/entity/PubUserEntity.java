@@ -1,5 +1,6 @@
 package com.dqcer.jtm.sso.entity;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -7,7 +8,7 @@ import java.util.Date;
 
 
 @Data
-public class PubUserEntity implements Serializable {
+public class PubUserEntity extends JSONObject implements Serializable {
 
     private static final long serialVersionUID = 7369216982738598107L;
 

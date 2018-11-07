@@ -3,6 +3,7 @@ package com.dqcer.jtm.sso.config.shiro;
 import com.alibaba.fastjson.JSONObject;
 import com.dqcer.jtm.sso.service.LoginService;
 import com.dqcer.jtm.sso.util.constants.Constants;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -10,8 +11,6 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
@@ -21,9 +20,8 @@ import java.util.Collection;
  * @Date: 2018/11/5 14:45
  * @Description: 自定义Realm
  */
-
+@Slf4j
 public class UserRealm extends AuthorizingRealm {
-    private Logger logger = LoggerFactory.getLogger(UserRealm.class);
 
     @Autowired
     private LoginService loginService;
@@ -33,8 +31,8 @@ public class UserRealm extends AuthorizingRealm {
         Session session = SecurityUtils.getSubject().getSession();
         //查询用户的权限
         JSONObject permission = (JSONObject) session.getAttribute(Constants.SESSION_USER_PERMISSION);
-        logger.info("permission的值为:" + permission);
-        logger.info("本用户权限为:" + permission.get("permissionList"));
+        log.info("permission的值为 {}" , permission);
+        log.info("本用户权限为 {}" , permission.get("permissionList"));
         //为当前用户设置角色和权限
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.addStringPermissions((Collection<String>) permission.get("permissionList"));

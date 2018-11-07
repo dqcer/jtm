@@ -1,8 +1,8 @@
 package com.dqcer.jtm.sso.config.exception;
 
 import com.alibaba.fastjson.JSONObject;
-import com.heeexy.example.util.CommonUtil;
-import com.heeexy.example.util.constants.ErrorEnum;
+import com.dqcer.jtm.sso.util.CommonUtil;
+import com.dqcer.jtm.sso.util.constants.ErrorEnum;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

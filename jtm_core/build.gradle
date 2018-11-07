@@ -1,7 +1,7 @@
 dependencies {
-    compile(
-            ['com.alibaba:fastjson:1.2.47'],
+    /*compile(
+            //['com.alibaba:fastjson:1.2.47']
 
             //['org.projectlombok:lombok:1.16.6']
-    )
+    )*/
 }

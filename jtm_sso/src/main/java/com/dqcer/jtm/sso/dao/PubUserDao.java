@@ -1,7 +1,9 @@
 package com.dqcer.jtm.sso.dao;
 
-import com.dqcer.jtm.sso.entity.PubUserEntity;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PubUserDao {
-    PubUserEntity findByUserName(String userName);
+
+
 }

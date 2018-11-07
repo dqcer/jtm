@@ -32,7 +32,7 @@ public class CommonUtil {
      * @param jsonObject json里的主要内容
      * @return
      */
-    private static JSONObject success(Object jsonObject) {
+    public static JSONObject success(Object jsonObject) {
         JSONObject resultJson = new JSONObject();
         resultJson.put("returnCode", Constants.SUCCESS_CODE);
         resultJson.put("returnMsg", Constants.SUCCESS_MSG);

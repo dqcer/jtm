@@ -1,6 +1,11 @@
 package com.dqcer.jtm.sso.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.dqcer.jtm.core.util.Result;
+import com.dqcer.jtm.sso.vo.UserInfo;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Author: dongQin
@@ -16,7 +21,8 @@ public interface LoginService {
      * @param jsonObject
      * @return
      */
-    JSONObject authLogin(JSONObject jsonObject);
+    @Transactional(rollbackFor = Exception.class)
+    Result authLogin(JSONObject jsonObject, HttpServletRequest request);
 
     /**
      * 根据用户名和密码查询对应的用户
@@ -25,7 +31,7 @@ public interface LoginService {
      * @param password
      * @return
      */
-    JSONObject getUser(String userName, String password);
+    UserInfo getUser(String userName, String password);
 
     /**
      * 查询当前登录用户的权限等信息

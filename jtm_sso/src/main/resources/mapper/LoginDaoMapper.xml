@@ -3,15 +3,37 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dqcer.jtm.sso.dao.LoginDao">
 
-    <select id="getInfo" resultType="com.alibaba.fastjson.JSONObject">
+    <select id="getInfo" resultType="com.dqcer.jtm.sso.vo.UserInfo">
         SELECT
             pu.id AS id,
-            pu.user_name AS username,
-            pu.password AS password
+            pu.user_name AS userName,
+            pu.password AS password,
+            pu.state as state
         FROM
             pub_user pu
         WHERE
-            pu.user_name = #{userName} AND pu.password = #{password}
+            pu.user_name = #{userName}
     </select>
 
+    <insert id="addSession" parameterType="com.dqcer.jtm.sso.vo.UnifySession" useGeneratedKeys="true" keyProperty="userId" >
+         <selectKey keyProperty="sid" order="AFTER" resultType="java.lang.Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO pub_user_session
+        (
+        user_code,
+        remote_ip,
+        token,
+        tstatus,
+        out_time,
+        start_time)
+        VALUES
+        (
+        #{userCode},
+        #{remoteIp},
+        #{token},
+        #{status},
+        null,
+        #{startTime})
+    </insert>
 </mapper>

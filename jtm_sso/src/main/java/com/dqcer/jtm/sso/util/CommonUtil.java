@@ -1,7 +1,6 @@
 package com.dqcer.jtm.sso.util;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dqcer.jtm.sso.config.exception.CommonJsonException;
 import com.dqcer.jtm.sso.util.constants.Constants;
 import com.dqcer.jtm.sso.util.constants.ErrorEnum;
 
@@ -165,7 +164,7 @@ public class CommonUtil {
                 jsonObject.put("returnCode", ErrorEnum.E_90003.getErrorCode());
                 jsonObject.put("returnMsg", "缺少必填参数:" + missCol.trim());
                 jsonObject.put("returnData", new JSONObject());
-                throw new CommonJsonException(jsonObject);
+                //throw new CommonJsonException(jsonObject);
             }
         }
     }

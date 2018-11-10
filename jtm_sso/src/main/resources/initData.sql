@@ -113,3 +113,13 @@ alter table `jtm`.`sys_user_role` AUTO_INCREMENT = 100000;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+CREATE TABLE IF NOT EXISTS `jtm`.`pub_user_session` (
+  `sid` INT(6) NULL COMMENT 'PK',
+  `user_code` VARCHAR(45) NULL COMMENT '用户编码',
+  `remote_ip` VARCHAR(45) NULL COMMENT 'remote_ip\n',
+  `token` VARCHAR(64) NULL COMMENT 'token',
+  `tstatus` VARCHAR(1) NULL COMMENT '状态',
+  `out_time` TIMESTAMP NULL COMMENT '结束时间',
+  `start_time` TIMESTAMP NULL COMMENT '开始时间')
+ENGINE = InnoDB;

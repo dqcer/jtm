@@ -3,8 +3,6 @@ package com.dqcer.jtm.sso.config.exception;
 import com.alibaba.fastjson.JSONObject;
 import com.dqcer.jtm.sso.util.CommonUtil;
 import com.dqcer.jtm.sso.util.constants.ErrorEnum;
-import org.apache.shiro.authz.UnauthenticatedException;
-import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -78,10 +76,10 @@ public class GlobalExceptionHandler {
      * @return
      * @throws Exception
      */
-    @ExceptionHandler(UnauthorizedException.class)
+   /* @ExceptionHandler(UnauthorizedException.class)
     public JSONObject unauthorizedExceptionHandler() throws Exception {
         return CommonUtil.errorJson(ErrorEnum.E_502);
-    }
+    }*/
 
     /**
      * 未登录报错拦截
@@ -90,8 +88,8 @@ public class GlobalExceptionHandler {
      * @return
      * @throws Exception
      */
-    @ExceptionHandler(UnauthenticatedException.class)
+    /*@ExceptionHandler(UnauthenticatedException.class)
     public JSONObject unauthenticatedException() throws Exception {
         return CommonUtil.errorJson(ErrorEnum.E_20011);
-    }
+    }*/
 }

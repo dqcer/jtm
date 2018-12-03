@@ -1,5 +1,8 @@
 package com.dqcer.jtm.core.util;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.io.Serializable;
 
 
@@ -8,7 +11,7 @@ import java.io.Serializable;
  * @Date: 2018/10/27 15:09
  * @Description: 响应信息主体
  */
-
+@Data
 public class Result<T> implements Serializable {
 
     private static final long serialVersionUID = -7247888468575179536L;
@@ -62,7 +65,6 @@ public class Result<T> implements Serializable {
         return new Result(code, message, Status.ERROR);
     }
 
-
     public enum Status {
 
         SUCCESS("OK"), ERROR("ERROR");
@@ -77,37 +79,5 @@ public class Result<T> implements Serializable {
             return code;
         }
 
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
     }
 }

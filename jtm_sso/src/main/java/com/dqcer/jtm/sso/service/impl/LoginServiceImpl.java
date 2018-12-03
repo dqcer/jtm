@@ -104,8 +104,8 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public JSONObject getInfo() {
-        return null;
+    public Result getInfo() {
+        return new Result();
     }
 
     /**
@@ -114,7 +114,7 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public JSONObject logout() {
-        return null;
+    public Result logout() {
+        return new Result();
     }
 }

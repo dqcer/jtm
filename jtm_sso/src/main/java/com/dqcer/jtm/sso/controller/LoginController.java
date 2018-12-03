@@ -48,7 +48,7 @@ public class LoginController extends BaseController{
      * @return
      */
     @PostMapping("/getInfo")
-    public JSONObject getInfo(){
+    public Result getInfo(){
         return loginService.getInfo();
     }
 
@@ -58,7 +58,7 @@ public class LoginController extends BaseController{
      * @return
      */
     @PostMapping("/logout")
-    public JSONObject logout(){
+    public Result logout(){
         return loginService.logout();
     }
 }

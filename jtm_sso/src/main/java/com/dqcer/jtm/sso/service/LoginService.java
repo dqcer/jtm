@@ -19,6 +19,7 @@ public interface LoginService {
      * 效验口令和密码
      *
      * @param jsonObject
+     * @param request
      * @return
      */
     @Transactional(rollbackFor = Exception.class)
@@ -38,13 +39,13 @@ public interface LoginService {
      *
      * @return
      */
-    JSONObject getInfo();
+    Result getInfo();
 
     /**
      * 退出登录
      *
      * @return
      */
-    JSONObject logout();
+    Result logout();
 
 }

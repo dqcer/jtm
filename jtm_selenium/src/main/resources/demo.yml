@@ -1,0 +1,11 @@
+exepath:
+url:
+username:
+password:
+linkedList:
+  # 定位当前的输入框,并输入‘spring boot’
+  - xpath: '//*[@id="kw"]'
+    method: sendKeys
+    value: 'spring boot'
+  # 定位当前‘百度一下’按钮的位置，并点击
+  - xpath: '//*[@id="su"]'

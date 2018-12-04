@@ -28,7 +28,7 @@ public class Main {
             executor.submit(new InitConfig(cyclicBarrier, downLatch));
         }
         downLatch.await();
-        log.info("当前共运行线程数: {}" + InitConfig.atomicInteger);
+        log.info("当前共运行线程数: {}", InitConfig.atomicInteger);
         executor.shutdown();
     }
 

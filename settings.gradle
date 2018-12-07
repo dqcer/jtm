@@ -30,4 +30,5 @@ include 'jtm_gateway'
 include 'jtm_ribbon'
 include 'jtm_sso'
 include 'jtm_selenium'
+include 'jtm-sso'
 

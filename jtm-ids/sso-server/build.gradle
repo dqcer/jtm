@@ -1,0 +1,13 @@
+
+dependencies{
+    compile project(":jtm-ids:sso-core")
+    compile(
+            ['org.springframework.boot:spring-boot-starter-web'],
+            /* ['org.apache.shiro:shiro-spring-boot-starter:1.4.0'],*/
+           /* ['org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'],*/
+            ['org.projectlombok:lombok'],
+            // freemarker
+            ['org.springframework.boot:spring-boot-starter-freemarker'],
+    )
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

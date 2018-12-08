@@ -1,0 +1,11 @@
+
+dependencies{
+    compile project(":jtm-ids:sso-core")
+    compile(
+            ['org.springframework.boot:spring-boot-starter-web'],
+            ['org.projectlombok:lombok'],
+            // freemarker
+            ['org.springframework.boot:spring-boot-starter-freemarker'],
+    )
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
